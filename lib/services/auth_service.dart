@@ -8,7 +8,6 @@ import '../models/user_model.dart' as models;
 
 class AuthService {
   static const String _defaultAdminUrl = 'http://localhost:8787';
-  static const String _adminTokenKey = 'ADMIN_API_TOKEN';
   static const String _tokenKey = 'chatapp_jwt';
 
   String? _adminApiToken;
@@ -35,16 +34,12 @@ class AuthService {
   }
 
   String _getAdminToken() {
-    if (_adminApiToken != null) return _adminApiToken!;
-    _adminApiToken =
-        dotenv.env[_adminTokenKey] ?? dotenv.env['ADMIN_TOKEN'] ?? '';
-    return _adminApiToken!;
+    return '';
   }
 
   Future<Map<String, String>> _adminHeaders() async {
     return {
       'Content-Type': 'application/json',
-      'x-admin-token': _getAdminToken(),
     };
   }
 

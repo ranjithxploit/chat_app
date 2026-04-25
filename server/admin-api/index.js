@@ -156,8 +156,6 @@ app.get('/health', (_req, res) => {
 
 app.post(
   '/auth/register',
-  requireLocalhost,
-  requireAdminToken,
   createUserRateLimit,
   async (req, res) => {
     const { username, password } = req.body || {};
@@ -232,8 +230,6 @@ app.post(
 
 app.post(
   '/auth/login',
-  requireLocalhost,
-  requireAdminToken,
   async (req, res) => {
     const { username, password } = req.body || {};
 
