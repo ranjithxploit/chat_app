@@ -31,7 +31,7 @@ class AuthService {
           'For other devices, set ADMIN_API_URL to your deployed admin API.';
     }
 
-    return 'Network error: $error';
+    return 'Network error: $error\nTarget API: $adminUrl';
   }
 
   String _getAdminToken() {

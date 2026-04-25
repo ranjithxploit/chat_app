@@ -150,7 +150,7 @@ class FileTransferService {
       }
     });
 
-    await _signalingChannel!.subscribe((status, error) {
+    _signalingChannel!.subscribe((status, error) {
       // Subscribed
     });
   }
